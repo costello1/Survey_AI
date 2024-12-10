@@ -1,0 +1,176 @@
+/* Survey.css */
+
+/* Root variables for easy theming */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #ffffff;
+  --accent-color: #50e3c2;
+  --background-color: #f5f7fa;
+  --text-color: #333333;
+  --input-border-color: #d1d9e6;
+  --input-focus-border: #4a90e2;
+  --button-hover-bg: #3a78c2;
+  --button-active-bg: #3564a3;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+/* Survey Container */
+.survey-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Survey Title */
+.survey-container h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+/* Survey Form */
+.survey-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual Survey Question */
+.survey-question {
+  margin-bottom: 25px;
+}
+
+/* Survey Question Text */
+.survey-question p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Labels for Inputs */
+.survey-question label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.survey-question label:hover {
+  color: var(--primary-color);
+}
+
+/* Input Elements */
+.survey-form input[type="text"],
+.survey-form input[type="email"],
+.survey-form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.survey-form input[type="text"]:focus,
+.survey-form input[type="email"]:focus,
+.survey-form select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Radio and Checkbox Inputs */
+.survey-form input[type="radio"],
+.survey-form input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  accent-color: var(--primary-color);
+}
+
+/* Submit Button */
+.survey-form button[type="submit"] {
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.survey-form button[type="submit"]:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.survey-form button[type="submit"]:active {
+  background-color: var(--button-active-bg);
+  transform: scale(0.98);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .survey-container {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+
+  .survey-container h1 {
+    font-size: 2em;
+  }
+
+  .survey-form button[type="submit"] {
+    font-size: 1em;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .survey-container {
+    padding: 20px 15px;
+    margin: 10px;
+  }
+
+  .survey-container h1 {
+    font-size: 1.8em;
+  }
+
+  .survey-form input[type="text"],
+  .survey-form input[type="email"],
+  .survey-form select {
+    padding: 10px 12px;
+    font-size: 0.95em;
+  }
+
+  .survey-form button[type="submit"] {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+}
